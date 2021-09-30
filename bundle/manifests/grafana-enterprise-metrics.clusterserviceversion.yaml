@@ -1384,6 +1384,21 @@ spec:
         x-descriptors:
           - 'urn:alm:descriptor:com.tectonic.ui:text'
           - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Image'
+      - displayName: Memcached
+        description: Specifies whether Memchached should be turned on, off by default, but strongly recommended
+        path: memcached.enabled
+        x-descriptors:
+          - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - displayName: Memcached queries 
+        description: Specifies whether Memchached Queries should be turned on, off by default, but strongly recommended
+        path: memcached-queries.enabled
+        x-descriptors:
+          - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - displayName: Memcached metadata 
+        description: Specifies whether Memchached Metadata should be turned on, off by default, but strongly recommended
+        path: memcached-metadata.enabled
+        x-descriptors:
+          - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
   description: An operator to install Grafana Enterprise Metrics (GEM) on OpenShift
   displayName: Grafana Enterprise Metrics (GEM) Operator
   icon:
