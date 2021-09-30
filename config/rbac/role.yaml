@@ -45,12 +45,14 @@ rules:
   - patch
   - update
   - watch
-- verbs:
-  - "*"
-  apiGroups:
-  - "policy"
+- apiGroups:
+  - security.openshift.io
+  resourceNames:
+  - anyuid
   resources:
-  - "podsecuritypolicies"
+  - securitycontextconstraints
+  verbs:
+  - use
 - verbs:
   - "*"
   apiGroups:
