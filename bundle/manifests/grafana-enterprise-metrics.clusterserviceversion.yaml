@@ -1448,8 +1448,14 @@ spec:
           - watch
         - apiGroups:
           - security.openshift.io
+          resources:
+          - securitycontextconstraints
+          verbs:
+          - '*'
+        - apiGroups:
+          - security.openshift.io
           resourceNames:
-          - anyuid
+          - hostaccess
           resources:
           - securitycontextconstraints
           verbs:
@@ -1467,7 +1473,9 @@ spec:
         - apiGroups:
           - rbac.authorization.k8s.io
           resources:
+          - clusterrolebindings
           - rolebindings
+          - clusterroles
           - roles
           verbs:
           - '*'
@@ -1478,6 +1486,13 @@ spec:
           - statefulsets
           verbs:
           - '*'
+        - apiGroups:
+          - batch
+          resources:
+          - jobs
+          verbs:
+          - delete
+          - create
         - apiGroups:
           - authentication.k8s.io
           resources:
