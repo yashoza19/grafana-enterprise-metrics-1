@@ -1365,6 +1365,9 @@ spec:
       - kind: Deployment
         name: ''
         version: v1
+      - kind: Job
+        name: ''
+        version: v1
       specDescriptors:
       - displayName: Cluster Name
         description: Uniquely Name for the GEM Cluster
@@ -1377,7 +1380,7 @@ spec:
         path: license.contents
         x-descriptors:
           - 'urn:alm:descriptor:com.tectonic.ui:text'
-          - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Secret'
+          #- 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Secret'
       - displayName: Image Repository
         description: image repository for GEM image, 'grafana/metrics-enterprise' by default
         path: image.repository
