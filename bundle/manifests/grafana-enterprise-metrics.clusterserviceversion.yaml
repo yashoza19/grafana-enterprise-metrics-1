@@ -1379,7 +1379,7 @@ spec:
         description: The Ingester Replication Factor Must always be a least 3
         path: config.ingester.lifecycler.ring.replication_factor
         x-descriptors:
-          - 'urn:alm:descriptor:com.tectonic.ui:text'
+          - 'urn:alm:descriptor:com.tectonic.ui:number'
           - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Configuration'
       - displayName: Image Repository
         description: image repository for GEM image, 'grafana/metrics-enterprise' by default
