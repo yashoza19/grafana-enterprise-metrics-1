@@ -1369,18 +1369,18 @@ spec:
         name: ''
         version: v1
       specDescriptors:
-      - displayName: Cluster Name
-        description: Uniquely Name for the GEM Cluster
-        path: image.cluster_name
-        x-descriptors:
-          - 'urn:alm:descriptor:com.tectonic.ui:text'
-          - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Image'
       - displayName: License File
-        description: Name and location of the license file
+        description: Copy and paste the contents of the license file, normally called license.jwt
         path: license.contents
         x-descriptors:
           - 'urn:alm:descriptor:com.tectonic.ui:text'
-          #- 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Secret'
+          - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Configuration'
+      - displayName: Ingester Replication Factor
+        description: The Ingester Replication Factor Must always be a least 3
+        path: config.ingester.lifecycler.ring.replication_factor
+        x-descriptors:
+          - 'urn:alm:descriptor:com.tectonic.ui:text'
+          - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Configuration'
       - displayName: Image Repository
         description: image repository for GEM image, 'grafana/metrics-enterprise' by default
         path: image.repository
@@ -1398,16 +1398,19 @@ spec:
         path: memcached.enabled
         x-descriptors:
           - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+          - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Memcache'
       - displayName: Memcached queries
         description: Specifies whether Memchached Queries should be turned on, off by default, but strongly recommended
         path: memcached-queries.enabled
         x-descriptors:
           - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+          - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Memcache'
       - displayName: Memcached metadata
         description: Specifies whether Memchached Metadata should be turned on, off by default, but strongly recommended
         path: memcached-metadata.enabled
         x-descriptors:
           - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+          - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Memcache'
   description: An operator to install Grafana Enterprise Metrics (GEM) on OpenShift
   displayName: Grafana Enterprise Metrics (GEM) Operator
   icon:
